@@ -13,6 +13,17 @@ class Styles {
               ? AppColors.darkScaffoldColor
               : AppColors.lightScaffoldColor,
       brightness: isDarkthem ? Brightness.dark : Brightness.light,
+      appBarTheme: AppBarTheme(
+        backgroundColor:
+            isDarkthem
+                ? AppColors.darkScaffoldColor
+                : AppColors.lightScaffoldColor,
+        elevation: 0,
+        centerTitle: false,
+        titleTextStyle: TextStyle(
+          color: isDarkthem ? Colors.white : Colors.black,
+        ),
+      ),
     );
   }
 }

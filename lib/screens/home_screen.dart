@@ -22,15 +22,7 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             ElevatedButton(onPressed: () {}, child: Text("Hello World")),
-            SwitchListTile(
-              title: Text(
-                themeProvider.getIsDarkTheme ? "Dark mode" : "Light mode",
-              ),
-              value: themeProvider.getIsDarkTheme,
-              onChanged: (value) {
-                themeProvider.setDarkThem(themeValue: value);
-              },
-            ),
+           
           ],
         ),
       ),

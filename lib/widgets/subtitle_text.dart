@@ -4,20 +4,19 @@ class SubtitleTextWidget extends StatelessWidget {
   const SubtitleTextWidget({
     super.key,
     required this.label,
-    required this.fontSize,
-    required this.fontWeight,
+    this.fontSize = 18,
+    this.fontStyle = FontStyle.normal,
+    this.fontWeight = FontWeight.normal,
     this.color,
-    this.decoration,
-    this.fontStyle,
+    this.textDecoration = TextDecoration.none,
   });
 
   final String label;
   final double fontSize;
+  final FontStyle fontStyle;
   final FontWeight? fontWeight;
   final Color? color;
-  final TextDecoration? decoration;
-  final FontStyle? fontStyle;
-
+  final TextDecoration textDecoration;
   @override
   Widget build(BuildContext context) {
     return Text(
@@ -26,9 +25,8 @@ class SubtitleTextWidget extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
-        decoration: decoration,
         fontStyle: fontStyle,
-        
+        decoration: textDecoration,
       ),
     );
   }

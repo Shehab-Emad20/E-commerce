@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/services/asses_manager.dart';
+import 'package:e_commerce_app/widgets/app_name_text.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
 import 'package:e_commerce_app/widgets/subtitle_text.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
@@ -17,8 +18,11 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
-        title: TitlesTextWidget(label: "Profile"),
-        leading: Image.asset(AssetsManager.shoppingCart),
+        title: AppNameText(),
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(AssetsManager.shoppingCart),
+        ),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

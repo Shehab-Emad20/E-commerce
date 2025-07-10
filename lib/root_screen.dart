@@ -30,7 +30,15 @@ class _RootScreenState extends State<RootScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: PageView(controller: controller, children: screens),
+      body: PageView(
+        controller: controller,
+        onPageChanged: (index) {
+          setState(() {
+            currentScreen = index;
+          });
+        },
+        children: screens,
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentScreen,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,

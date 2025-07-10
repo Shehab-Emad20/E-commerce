@@ -14,6 +14,7 @@ class Styles {
               : AppColors.lightScaffoldColor,
       brightness: isDarkthem ? Brightness.dark : Brightness.light,
       appBarTheme: AppBarTheme(
+        
         backgroundColor:
             isDarkthem
                 ? AppColors.darkScaffoldColor

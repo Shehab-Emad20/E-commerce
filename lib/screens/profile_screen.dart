@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/services/asses_manager.dart';
-import 'package:e_commerce_app/widgets/app_name_text.dart';
+import 'package:e_commerce_app/widgets/custom_app_bar.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
 import 'package:e_commerce_app/widgets/subtitle_text.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
@@ -15,30 +15,24 @@ class ProfileScreen extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0,
-        title: AppNameText(),
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Image.asset(AssetsManager.shoppingCart),
-        ),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(kToolbarHeight),
+        child: CustomAppBar(label: "Shop Smart"),
       ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
             Visibility(
               visible: false,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: TitlesTextWidget(
-                  label: "please login to have ultimate access",
+                  label: "Please login to have ultimate access",
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -53,7 +47,7 @@ class ProfileScreen extends StatelessWidget {
                         color: Theme.of(context).colorScheme.surface,
                         width: 3,
                       ),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: NetworkImage(
                           "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png",
                         ),
@@ -61,8 +55,8 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 7),
-                  Column(
+                  const SizedBox(width: 7),
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TitlesTextWidget(label: "Shehab Emad"),
@@ -77,7 +71,7 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TitlesTextWidget(label: "General"),
+                  const TitlesTextWidget(label: "General"),
                   CustomListTile(
                     imagePath: AssetsManager.orderSvg,
                     text: "All Orders",
@@ -85,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   CustomListTile(
                     imagePath: AssetsManager.wishlistSvg,
-                    text: "Wishlis",
+                    text: "Wishlist",
                     function: () {},
                   ),
                   CustomListTile(
@@ -98,8 +92,8 @@ class ProfileScreen extends StatelessWidget {
                     text: "Address",
                     function: () {},
                   ),
-                  Divider(thickness: 1),
-                  TitlesTextWidget(label: "Setting"),
+                  const Divider(thickness: 1),
+                  const TitlesTextWidget(label: "Settings"),
                   SwitchListTile(
                     secondary: Image.asset(AssetsManager.theme, height: 30),
                     title: Text(
@@ -110,15 +104,15 @@ class ProfileScreen extends StatelessWidget {
                       themeProvider.setDarkThem(themeValue: value);
                     },
                   ),
-                  Divider(thickness: 1),
+                  const Divider(thickness: 1),
                 ],
               ),
             ),
             Center(
               child: ElevatedButton.icon(
                 onPressed: () {},
-                icon: Icon(Icons.login),
-                label: Text("login"),
+                icon: const Icon(Icons.login),
+                label: const Text("Login"),
               ),
             ),
           ],

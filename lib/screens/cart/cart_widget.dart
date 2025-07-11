@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/screens/cart/quantity_bottom_sheet.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,16 @@ class CartWidget extends StatelessWidget {
                       children: [
                         TitlesTextWidget(label: "16\$"),
                         OutlinedButton.icon(
-                          onPressed: () {},
+                          onPressed: () async {
+                            await showModalBottomSheet(
+                              backgroundColor:
+                                  Theme.of(context).scaffoldBackgroundColor,
+                              context: context,
+                              builder: (context) {
+                                return QuantityBottomSheet();
+                              },
+                            );
+                          },
                           icon: Icon(IconlyLight.arrowDown2),
                           label: Text("qty:6"),
                         ),

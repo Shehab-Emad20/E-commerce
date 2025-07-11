@@ -1,5 +1,6 @@
+import 'package:e_commerce_app/screens/cart/bottom_checkout.dart';
 import 'package:e_commerce_app/services/asses_manager.dart';
-import 'package:e_commerce_app/widgets/cart_widget.dart';
+import 'package:e_commerce_app/screens/cart/cart_widget.dart';
 import 'package:e_commerce_app/widgets/custom_app_bar.dart';
 import 'package:e_commerce_app/widgets/empty_bag.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class CartScreen extends StatelessWidget {
           ),
         )
         : Scaffold(
+          bottomSheet: BottomCheckout(),
           appBar: const PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: CustomAppBar(label: "Cart(5)", showActions: true),

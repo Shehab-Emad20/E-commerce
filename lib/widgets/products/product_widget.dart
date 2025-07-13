@@ -4,14 +4,9 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 
-class ProductWidget extends StatefulWidget {
+class ProductWidget extends StatelessWidget {
   const ProductWidget({super.key});
 
-  @override
-  State<ProductWidget> createState() => _ProductWidgetState();
-}
-
-class _ProductWidgetState extends State<ProductWidget> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,9 +15,9 @@ class _ProductWidgetState extends State<ProductWidget> {
       padding: const EdgeInsets.all(3.0),
       child: InkWell(
         borderRadius: BorderRadius.circular(15),
-
         onTap: () {},
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(14),
@@ -32,44 +27,33 @@ class _ProductWidgetState extends State<ProductWidget> {
                 height: size.height * 0.22,
               ),
             ),
-            Row(
-              children: [
-                Flexible(
-                  flex: 5,
-                  child: TitlesTextWidget(label: "Ttile " * 10),
-                ),
-              ],
-            ),
-
-            Flexible(
+            const SizedBox(height: 6),
+            TitlesTextWidget(label: "Ttile " * 3, maxLines: 1),
+            const SizedBox(height: 6),
+            Align(
+              alignment: Alignment.centerLeft,
               child: IconButton(
                 onPressed: () {},
                 icon: Icon(IconlyLight.heart),
               ),
             ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Flexible(flex: 5, child: TitlesTextWidget(label: "166.5\$")),
-              ],
-            ),
-
-            Flexible(
-              child: Material(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.lightBlue,
-
-                child: InkWell(
+                TitlesTextWidget(label: "166.5\$"),
+                Material(
                   borderRadius: BorderRadius.circular(15),
-
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Icon(Icons.add_shopping_cart_rounded),
+                  color: Colors.lightBlue,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(15),
+                    onTap: () {},
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Icon(Icons.add_shopping_cart_rounded),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           ],
         ),

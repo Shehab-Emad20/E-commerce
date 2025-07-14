@@ -1,9 +1,9 @@
 import 'package:e_commerce_app/consts/app_consts.dart';
 import 'package:e_commerce_app/screens/inner_screns/products_details.dart';
+import 'package:e_commerce_app/widgets/products/heart_btn.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class ProductWidget extends StatelessWidget {
   const ProductWidget({super.key});
@@ -32,13 +32,7 @@ class ProductWidget extends StatelessWidget {
             const SizedBox(height: 6),
             TitlesTextWidget(label: "Ttile " * 3, maxLines: 1),
             const SizedBox(height: 6),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(IconlyLight.heart),
-              ),
-            ),
+            Align(alignment: Alignment.centerLeft, child: HeartBtn()),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -55,7 +49,6 @@ class ProductWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                
               ],
             ),
           ],

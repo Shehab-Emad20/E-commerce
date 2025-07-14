@@ -1,10 +1,10 @@
 import 'package:e_commerce_app/consts/app_consts.dart';
 import 'package:e_commerce_app/widgets/custom_app_bar.dart';
+import 'package:e_commerce_app/widgets/products/heart_btn.dart';
 import 'package:e_commerce_app/widgets/subtitle_text.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 
 class ProductsDetails extends StatefulWidget {
   static const String routeName = '/ProductsDetails';
@@ -53,15 +53,8 @@ class _ProductsDetailsState extends State<ProductsDetails> {
 
             Row(
               children: [
-                // Heart icon on the left
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(IconlyLight.heart),
-                ),
-
+                HeartBtn(),
                 const SizedBox(width: 10),
-
-                // Add to cart button on the right, taking full space
                 Expanded(
                   child: SizedBox(
                     child: ElevatedButton.icon(

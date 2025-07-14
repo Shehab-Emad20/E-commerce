@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/consts/app_consts.dart';
 import 'package:e_commerce_app/screens/cart/quantity_bottom_sheet.dart';
+import 'package:e_commerce_app/widgets/products/heart_btn.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -45,10 +46,7 @@ class CartWidget extends StatelessWidget {
                               onPressed: () {},
                               icon: Icon(Icons.clear),
                             ),
-                            IconButton(
-                              onPressed: () {},
-                              icon: Icon(IconlyLight.heart),
-                            ),
+                            HeartBtn(),
                           ],
                         ),
                       ],

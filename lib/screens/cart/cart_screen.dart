@@ -23,7 +23,11 @@ class CartScreen extends StatelessWidget {
           bottomSheet: BottomCheckout(),
           appBar: const PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
-            child: CustomAppBar(label: "Cart(5)", showActions: true),
+            child: CustomAppBar(
+              label: "Cart(5)",
+              showActions: true,
+              centerTitle: false,
+            ),
           ),
           body: ListView.builder(
             itemCount: 15,

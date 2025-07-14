@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/consts/app_consts.dart';
+import 'package:e_commerce_app/screens/inner_screns/products_details.dart';
 import 'package:e_commerce_app/widgets/title_text.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
@@ -13,9 +14,10 @@ class ProductWidget extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.all(3.0),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(15),
-        onTap: () {},
+      child: GestureDetector(
+        onTap: () async {
+          await Navigator.pushNamed(context, ProductsDetails.routeName);
+        },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -53,6 +55,7 @@ class ProductWidget extends StatelessWidget {
                     ),
                   ),
                 ),
+                
               ],
             ),
           ],

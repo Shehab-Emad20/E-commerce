@@ -1,6 +1,5 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:e_commerce_app/consts/app_consts.dart';
-import 'package:e_commerce_app/services/asses_manager.dart';
 import 'package:e_commerce_app/widgets/custom_app_bar.dart';
 import 'package:e_commerce_app/widgets/products/category_rounded_widget.dart';
 import 'package:e_commerce_app/widgets/products/latest_arrival.dart';
@@ -17,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
-        child: CustomAppBar(label: "ShopSmart"),
+        child: CustomAppBar(label: "ShopSmart",centerTitle: false),
       ),
       body: SafeArea(
         child: Padding(

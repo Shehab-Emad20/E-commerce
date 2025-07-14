@@ -49,8 +49,8 @@ class _SearchScreenState extends State<SearchScreen> {
                   suffix: GestureDetector(
                     onTap: () {
                       // setState(() {
-                        searchTextController.clear();
-                        FocusScope.of(context).unfocus();
+                      searchTextController.clear();
+                      FocusScope.of(context).unfocus();
                       // });
                     },
                     child: Icon(Icons.clear),

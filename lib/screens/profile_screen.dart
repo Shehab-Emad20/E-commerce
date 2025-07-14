@@ -2,6 +2,7 @@ import 'package:e_commerce_app/providers/theme_provider.dart';
 import 'package:e_commerce_app/screens/inner_screns/viewed_recently.dart';
 import 'package:e_commerce_app/screens/inner_screns/wishlist.dart';
 import 'package:e_commerce_app/services/asses_manager.dart';
+import 'package:e_commerce_app/services/my_app_method.dart';
 import 'package:e_commerce_app/widgets/custom_app_bar.dart';
 import 'package:e_commerce_app/widgets/custom_list_tile.dart';
 import 'package:e_commerce_app/widgets/subtitle_text.dart';
@@ -114,13 +115,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Center(
-              child: ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.login),
-                label: const Text("Login"),
-              ),
-            ),
+            MyAppMethod(),
           ],
         ),
       ),

@@ -5,16 +5,16 @@ import 'package:e_commerce_app/widgets/empty_bag.dart';
 import 'package:e_commerce_app/widgets/products/product_widget.dart';
 import 'package:flutter/material.dart';
 
-class Wishlist extends StatelessWidget {
-  static const routName = '/Wishlist';
-  const Wishlist({super.key});
+class ViewedRecently extends StatelessWidget {
+  static const routName = '/ViewedRecently';
+  const ViewedRecently({super.key});
   final bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
     return isEmpty
         ? Scaffold(
           body: EmptyBag(
-            imagePath: AssetsManager.bagWish,
+            imagePath: AssetsManager.shoppingBasket,
             title: "Whoops",
             subtile: "Your Wishlist is Empty",
             buttonText: "Shop Now",
@@ -24,7 +24,7 @@ class Wishlist extends StatelessWidget {
           appBar: const PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: CustomAppBar(
-              label: "Wishlist(5)",
+              label: "ViewedRecently(5)",
               showActions: true,
               centerTitle: false,
             ),
